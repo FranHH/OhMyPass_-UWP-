@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OhMyPassWFP.Views.AddOpinionPage"
+             Title="¿Que te ha parecido OhMyPass?">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="wallpaper.jpg" Aspect="AspectFill"/>
+            <BoxView Color="LightGray" Opacity="0.8" />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+            </Grid>
+
+            <StackLayout>
+
+                <Label Text="Dejanos una valoración" TextColor="Black" FontAttributes="Bold" FontSize="Medium" Padding="25,25,15,0"/>
+                <StackLayout Orientation="Horizontal" Padding="25,30,25,25" >
+                    <ImageButton Source="estrella64.png" x:Name="estrella1" BackgroundColor="Transparent" Clicked="BtnEst1"/>
+                    <ImageButton Source="estrella64.png" x:Name="estrella2" BackgroundColor="Transparent" Clicked="BtnEst2"/>
+                    <ImageButton Source="estrella64.png" x:Name="estrella3" BackgroundColor="Transparent" Clicked="BtnEst3"/>
+                    <ImageButton Source="estrella64.png" x:Name="estrella4" BackgroundColor="Transparent" Clicked="BtnEst4"/>
+                    <ImageButton Source="estrella64.png" x:Name="estrella5" BackgroundColor="Transparent" Clicked="BtnEst5"/>
+                </StackLayout>
+
+                <Label Text="Tu opinión es importante para OhMyPass. Ayudanos a seguir mejorando la experiencia del usuario final"  TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Start" FontSize="Medium" Padding="25,25,25,10"/>
+                
+                <Editor BackgroundColor="Transparent" AutoSize="TextChanges" IsTextPredictionEnabled="True" PlaceholderColor="Black" Margin="20,0,20,140" Placeholder="¿Como podemos mejorar?" x:Name="eOpinion"/>
+
+                <StackLayout Orientation="Horizontal" Padding="25,30">
+                    <CheckBox x:Name="checkPrivacidadDeDatos"  HorizontalOptions="EndAndExpand" Color="Black"/>
+                    <Label VerticalOptions="EndAndExpand">
+                        <Label.FormattedText >
+                            <FormattedString >
+                                <Span Text="Acepto las "/>
+                                <Span Text="Condiciones de Privacidad de Datos" TextColor="Blue" TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TerminosYCondiciones"/>
+                                    </Span.GestureRecognizers>
+                                </Span>
+                                <Span Text="de OhMyPass Entertainment." />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+
+                <Button Text="Enviar" BackgroundColor="Black" BorderRadius="20" TextColor="White" Clicked="SendData" Margin="25,0,25,0"/>
+                <Button Text="Cancelar" BackgroundColor="Transparent" BorderRadius="20" TextColor="Black" Clicked="BtnCancelar" Margin="25,0,25,0"/>
+
+            </StackLayout>
+
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

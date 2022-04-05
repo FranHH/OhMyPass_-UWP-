@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OhMyPassWFP.Views.LoginPageKey">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="wallpaper.jpg" Aspect="AspectFill"/>
+            <BoxView Color="LightGray" Opacity="0.8" />
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout Grid.Row="1" Padding="0,0">
+                        <Image Grid.Row="0" Source="logograndesinfondo.png" WidthRequest="100" HeightRequest="350" Margin="0,0,0,30"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="2" Padding="40,100">
+                        <Entry Placeholder="Correo" PlaceholderColor="Black" x:Name="cUsuario" Margin="0,100,0,0"/>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Entry Placeholder="Contraseña" PlaceholderColor="Black" IsPassword="True" HorizontalOptions="FillAndExpand"  x:Name="cPass" />
+                            <Image x:Name="password_icon" Source="ver.png" HorizontalOptions="End">
+                                <Image.GestureRecognizers >
+                                    <TapGestureRecognizer Tapped="PasswordIcon_Clicked" NumberOfTapsRequired="1"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+
+                        <Button Text="Iniciar sesion" BackgroundColor="Black" BorderRadius="20" TextColor="White" Clicked="btnIniciarSesion"/>
+
+                        <StackLayout Orientation="Horizontal" Opacity="0.7">
+                            <Button Text="¿Recuperar contraseña?" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Clicked="btnRecuperarPass"/>
+                            <Button Text="Registrarse" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="EndAndExpand" FontAttributes="Bold" Clicked="btnRegistrarse"/>
+                        </StackLayout>
+
+                    </StackLayout>
+                    <StackLayout Grid.Row="3" HorizontalOptions="Center" Margin="0,0,0,50">
+                        <Label Text="Iniciar sesion con" FontAttributes="Bold"/>
+                        <StackLayout Orientation="Horizontal" >
+                            <ImageButton Grid.Row="0" Source="google64.png" WidthRequest="50" BackgroundColor="Transparent" HeightRequest="45" Clicked="btnGoogle" />
+                            <ImageButton Grid.Row="0" Source="facebook64.png" WidthRequest="50" HeightRequest="45" Clicked="btnFacebook"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+                  
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,4 @@
+MainPackage=C:\ots\OhMyPass(Multiplasform)\OhMyPassWFP\OhMyPassWFP.UWP\bin\ARM\Debug\OhMyPassWFP.UWP_1.0.0.0_ARM_Debug.appx
+SymbolPackage=C:\ots\OhMyPass(Multiplasform)\OhMyPassWFP\OhMyPassWFP.UWP\obj\ARM\Debug\Symbols\OhMyPassWFP.UWP_1.0.0.0_ARM_Debug.appxsym
+ResourcePack=C:\ots\OhMyPass(Multiplasform)\OhMyPassWFP\OhMyPassWFP.UWP\bin\ARM\Debug\OhMyPassWFP.UWP_1.0.0.0_scale-100.appx
+ResourcePack=C:\ots\OhMyPass(Multiplasform)\OhMyPassWFP\OhMyPassWFP.UWP\bin\ARM\Debug\OhMyPassWFP.UWP_1.0.0.0_scale-400.appx

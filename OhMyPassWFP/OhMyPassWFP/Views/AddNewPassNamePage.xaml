@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OhMyPassWFP.Views.AddNewPassNamePage">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="wallpaper.jpg" Aspect="AspectFill"/>
+            <BoxView Color="LightGray" Opacity="0.8" />
+
+            <StackLayout Margin="10,10,10,10" >
+                <Image Source="addPassLogo.png" HeightRequest="300" Margin="0,0"/>
+            </StackLayout>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="2" Padding="20,0" >
+                    <Entry Placeholder="Nombre para la contraseña" PlaceholderColor="Black" x:Name="cNamePass"/>
+                    
+                    <StackLayout Orientation="Horizontal">
+                        <Entry Placeholder="Contraseña" PlaceholderColor="Black" IsPassword="True" HorizontalOptions="FillAndExpand" x:Name="cPassEncrypt" />
+                        <Image x:Name="pass_icon" Source="ver.png" HorizontalOptions="End">
+                            <Image.GestureRecognizers >
+                                <TapGestureRecognizer Tapped="PassIcon_Clicked" NumberOfTapsRequired="1"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Entry Placeholder="Grupo" PlaceholderColor="Black" HorizontalOptions="FillAndExpand" x:Name="cGrupo"/>
+                        <Image x:Name="about_icon" Source="icon_About.png" HorizontalOptions="End">
+                            <Image.GestureRecognizers >
+                                <TapGestureRecognizer Tapped="AboutIcon_Clicked" NumberOfTapsRequired="1"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Entry Placeholder="Notas" PlaceholderColor="Black" x:Name="cNotas" MaxLength="250" HorizontalOptions="FillAndExpand"/>
+                        <Image x:Name="aboutNotas_icon" Source="icon_About.png" HorizontalOptions="End">
+                            <Image.GestureRecognizers >
+                                <TapGestureRecognizer Tapped="AboutNotasIcon_Clicked" NumberOfTapsRequired="1"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    
+                </StackLayout>
+                
+                <StackLayout Grid.Row="3" Margin="10,70,10,10">
+                    <Button Text="Guardar" BackgroundColor="Black" BorderRadius="100" TextColor="White" Clicked="btnSavePass"/>
+                    <Button Text="Volver a inicio" BackgroundColor="Transparent" BorderRadius="20"  TextColor="Black" Clicked="btnAtras"/>
+                </StackLayout>
+                
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

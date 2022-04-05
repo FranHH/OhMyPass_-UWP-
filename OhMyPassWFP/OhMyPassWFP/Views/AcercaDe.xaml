@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OhMyPassWFP.Views.AcercaDe"
+             Title="Acerca de"
+             BackgroundColor="DarkGray">
+
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="wallpaper.jpg" Aspect="AspectFill"/>
+            <BoxView Color="LightGray" Opacity="0.8" />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+            </Grid>
+
+            <StackLayout Orientation="Vertical">
+                <Label Text="Social" TextColor="Black" FontAttributes="Italic" FontSize="Large" Padding="25,30,0,0" TextDecorations="Underline"/>
+                
+                <Button Text="¡Sigueme en Instagram!" Clicked="btnFollowIg" BackgroundColor="Transparent" HorizontalOptions="Start" Margin="0,10" Padding="25,-20,200,0"/>
+                <Label Text="@Fran_.jpg" TextColor="Black" FontSize="Small" Opacity="0.5" Margin="25,-40,305,0" BackgroundColor="Transparent"/>
+
+                <Button Text="Linkedin" Clicked="btnLinkedin" BackgroundColor="Transparent" HorizontalOptions="Start" Margin="0,10" Padding="25,-20,200,0"/>
+                <Label Text="FranDev" TextColor="Black" Opacity="0.5" FontSize="Small" Margin="25,-40,330,0"/>
+
+                <Button Text="¡Sigueme en mi canal de youtube!" Clicked="btnYoutube" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" Margin="0,10" Padding="25,-20,140,0"/>
+                <Label Text="Youtube.com/Akanaret" TextColor="Black" Opacity="0.5" FontSize="Small" BackgroundColor="Transparent" Margin="25,-40,230,0"/>
+                
+                <Button Text="Informacion del dispositivo" Clicked="btnInfoDispositivo" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" Padding="20,0,170,0" BorderColor="Black"/>
+
+                <Label Text="Acerca de" TextColor="Black" FontAttributes="Italic" FontSize="Large" Padding="25,25,0,0" TextDecorations="Underline"/>
+                
+                <Button Text="Versión de la aplicación" Clicked="btnInfoVersionApp" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" Margin="0,10" Padding="25,-20,200,0"/>
+                <Label x:Name="lblVersion" TextColor="Black" Opacity="0.5" FontSize="Small" Margin="25,-40,305,0" BackgroundColor="Transparent"/>
+                
+                <Button Text="Sobre nosotros" Clicked="btnSobreNosotros" BackgroundColor="Transparent" HorizontalOptions="Start"  Padding="25,0,0,0"/>
+                
+                <Button Text="Terminos de uso" Clicked="btnSobreNosotros" BackgroundColor="Transparent" HorizontalOptions="Start"  Padding="25,0,0,0"/>
+                
+                <Button Text="Política de privacidad" Clicked="btnSobreNosotros" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="25,0,0,0"/>
+            </StackLayout>
+            
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OhMyPassWFP.Views.RecoveryPage"
+             Title="¿Has olvidado tu PIN?"
+             BackgroundColor="DarkGray">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="wallpaper.jpg" Aspect="AspectFill"/>
+            <BoxView Color="LightGray" Opacity="0.8" />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+            </Grid>
+
+            <StackLayout Grid.Row="0">
+                <Image Grid.Row="0" Source="logograndesinfondo.png" WidthRequest="100" HeightRequest="200" Margin="0,20,0,30"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="0,170,0,0">
+
+                <Label Text="Vaya... Parece que has olvidado tu PIN de acceso. Voy a necesitar algunos datos para recuperar tu contraseña" TextColor="Black" FontAttributes="Italic" FontSize="Medium" Padding="25,30,25,0" />
+
+                <Label Text="Correo electrónico" TextColor="Black" Padding="25,50,0,0"/>
+                <Entry Placeholder="Introduce tu correo electronico" x:Name="correoRecu" TextColor="Black" FontSize="Small" BackgroundColor="Transparent" Margin="25,-5,25,0" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Código de verificación" TextColor="Black" Padding="25,20,0,0"/>
+                <Entry Placeholder="Introduce el código de verificación" x:Name="tlfnRecu" TextColor="Black" FontSize="Small" BackgroundColor="Transparent" Margin="25,-5,25,0" HorizontalOptions="FillAndExpand"/>
+
+                <StackLayout Orientation="Horizontal" Margin="15,70,45,0">
+                    <Button Text="Cancelar" Clicked="btnCancelar" BackgroundColor="Transparent"  BorderRadius="20" TextColor="Black" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Enviar" Clicked="btnEnviar" BackgroundColor="Black"  BorderRadius="20" TextColor="White" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

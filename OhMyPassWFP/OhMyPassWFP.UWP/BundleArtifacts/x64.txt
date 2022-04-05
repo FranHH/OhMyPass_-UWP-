@@ -1,0 +1,2 @@
+MainPackage=C:\ots\OhMyPass(Multiplasform)\OhMyPassWFP\OhMyPassWFP.UWP\bin\x64\Debug\OhMyPassWFP.UWP_1.0.0.0_x64_Debug.appx
+SymbolPackage=C:\ots\OhMyPass(Multiplasform)\OhMyPassWFP\OhMyPassWFP.UWP\obj\x64\Debug\Symbols\OhMyPassWFP.UWP_1.0.0.0_x64_Debug.appxsym

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="OhMyPassWFP.Views.MotorOhMyPass">
+    
+    <MasterDetailPage.Master>
+
+        <ContentPage Title="Oh My Pass"
+                     Padding="0,0,70,0"
+                     BackgroundColor="Transparent">
+            <ContentPage.Resources>
+                <ResourceDictionary>
+                    <OnPlatform x:Key="padding"
+                                x:TypeArguments="Thickness"
+                                iOS="0,20,0,-6"
+                                Android="0,25,0,80"
+                                WinPhone="0" />
+                </ResourceDictionary>
+            </ContentPage.Resources>
+
+            <Grid>
+                <Image Source="wallpaper.jpg" Aspect="AspectFill"/>
+                <BoxView Color="LightGray" Opacity="0.8" />
+
+                <Grid Padding="{StaticResource padding}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout Margin="10,0,40,10" >
+                        <Image Source="logosinfondo.png" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1">
+                        <ListView x:Name="ListMenu" HasUnevenRows="True" ItemSelected="ListMenu_ItemSelected" ItemTapped="menuTapped">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid Padding="9">
+                                            <StackLayout Padding="12,0,0,0" Orientation="Horizontal">
+
+                                                <Image Source="{Binding MenuImage}" HorizontalOptions="Start"/>
+                                                <Label Text="{Binding MenuTitle}" TextColor="Black" FontSize="Subtitle"  Padding="15,10,0,0" HorizontalOptions="StartAndExpand"/>
+
+                                            </StackLayout>
+
+                                        </Grid>
+                                    </ViewCell>
+                                    <!--<TextCell Text="{Binding MenuTitle}" TextColor="Black" Detail="{Binding MenuDetail}" ></TextCell>-->
+
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <!--
+                        <StackLayout>
+                           
+                             <StackLayout>
+                                <Label Text="Opciones" TextColor="Black" BackgroundColor="LightGray" FontSize="Subtitle" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextDecorations="Underline" FontAttributes="Italic"/>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="icon_about.png" Margin="10,0"/>
+                                    <Button Text="Acerca de" BackgroundColor="Transparent" Padding="0,0,155,0" HorizontalOptions="FillAndExpand" Clicked="btnAbout" />
+
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="faq.png" Margin="14,0"/>
+                                    <Button Text="FAQ" BackgroundColor="Transparent" Padding="0,0,200,0" HorizontalOptions="FillAndExpand" Clicked="btnFAQ"/>
+
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="feedback.png" Margin="14,0"/>
+                                    <Button Text="Opinión" BackgroundColor="Transparent" Padding="0,0,175,0" HorizontalOptions="FillAndExpand" Clicked="btnOpinion"/>
+
+                                </StackLayout>
+                                <Label Text="Otros" TextColor="Black" BackgroundColor="LightGray" FontSize="Subtitle" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"  TextDecorations="Underline" FontAttributes="Italic"/>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="privacidad.png" Margin="14,0"/>
+                                    <Button Text="Politica de Privacidad" BackgroundColor="Transparent" Padding="0,0,65,0" HorizontalOptions="FillAndExpand" Clicked="btnPrivacidad"/>
+
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="calificacion.png" Margin="14,0"/>
+                                    <Button Text="Califica la aplicación" BackgroundColor="Transparent" Padding="0,0,65,0" HorizontalOptions="FillAndExpand" Clicked="btnCalificacion"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        -->
+                    </StackLayout>
+
+
+
+                </Grid>
+            </Grid>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+</MasterDetailPage>

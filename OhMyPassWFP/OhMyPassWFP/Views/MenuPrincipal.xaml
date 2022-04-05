@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:models="clr-namespace:OhMyPass.models"
+             x:Class="OhMyPassWFP.Views.MenuPrincipal"
+             Title="Menú de opciones">
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ordenar.png"
+                     Clicked="btnFiltro"
+                     Order="Primary"
+                     Priority="0" />
+        
+       
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+        <Image Source="wallpaper.jpg" Aspect="AspectFill"/>
+        <BoxView Color="LightGray" Opacity="0.8" />
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+        </Grid>
+
+        
+
+                <StackLayout>
+                    <SearchBar TextChanged="btnFiltro" HorizontalTextAlignment="Start" TextColor="Black" PlaceholderColor="Black" CancelButtonColor="Black" BackgroundColor="Transparent" Keyboard="Text" FontAttributes="Bold" Placeholder="Búsqueda por nombre o grupo" HorizontalOptions="FillAndExpand" x:Name="bBusqueda"></SearchBar>
+                    <StackLayout>
+                <ScrollView Grid.Row="0">
+                    <ListView x:Name="PassNameLV" HasUnevenRows="True" ItemTapped="ListPass_Tapped" ItemSelected="ListPass_ItemSelected" SeparatorVisibility="None" IsPullToRefreshEnabled="True" RefreshControlColor="Green" Scrolled="OnListViewScrolled" HorizontalScrollBarVisibility="Always" VerticalScrollBarVisibility="Always">
+                            <ListView.ItemTemplate>
+                                <DataTemplate >
+                                    <ViewCell>
+                                        <Grid Padding="5" >
+                                            <Frame BackgroundColor="WhiteSmoke" CornerRadius="5" BorderColor="Black" HasShadow="false">
+                                                <StackLayout>
+
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="Nombre :       " TextColor="Black" FontAttributes="Bold" Opacity="0.5" HorizontalOptions="Start" FontSize="Medium"/>
+                                                        <Label Text="{Binding Name}" TextColor="Black" HorizontalOptions="StartAndExpand" TextDecorations="Underline" FontSize="Medium" FontAttributes="Bold"/>
+                                                    </StackLayout>
+
+
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="Contraseña : " TextColor="Black" FontAttributes="Bold" Opacity="0.5" HorizontalOptions="Start" FontSize="Medium" />
+                                                        <Label Text="{Binding Pass}" TextColor="Black" HorizontalOptions="StartAndExpand" TextDecorations="Underline" FontSize="Medium" FontAttributes="Bold" />
+                                                        <Image Source="{Binding IconFav}" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent"/>
+
+                                                    </StackLayout>
+
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="Grupo :           " TextColor="Black" FontAttributes="Bold" Opacity="0.5" HorizontalOptions="Start" FontSize="Medium"/>
+                                                        <Label Text="{Binding Grupo}" TextColor="Black" HorizontalOptions="StartAndExpand" TextDecorations="Underline" FontSize="Medium" FontAttributes="Bold" />
+                                                    </StackLayout>
+
+                                                <StackLayout>
+                                                    <Label Text="Nota : " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" Opacity="0.5" FontSize="Medium" />
+                                                    <Editor Text="{Binding Nota}" IsReadOnly="True" FontSize="Medium" FontAttributes="Italic" BackgroundColor="Transparent" AutoSize="TextChanges" PlaceholderColor="Black" Placeholder="No hay ninguna nota"/>
+                                                    <!--<Label Text="{Binding Nota}" TextColor="Black" HorizontalOptions="StartAndExpand" FontSize="Medium" FontAttributes="Bold"/>
+                                                    -->
+                                                    
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Fecha de creación " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" Opacity="0.3" FontSize="Small" />
+                                                    <Label Text="{Binding Date}" TextColor="Black" HorizontalOptions="EndAndExpand" Opacity="0.5" FontSize="Small" FontAttributes="Bold"/>
+                                                </StackLayout>
+                                                    
+                                            </StackLayout>
+                                            </Frame>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                </ScrollView>
+            </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            
+
+        <ImageButton Grid.Row="0" Source="mas5.png" Clicked="btnADD" BackgroundColor="Transparent" HorizontalOptions="End" Margin="0,0,30,40" VerticalOptions="End"/>
+
+
+        <ActivityIndicator x:Name="indicatorMenu" IsRunning="false" VerticalOptions="Center" HorizontalOptions="Center" Color="Black"/>
+    </Grid>
+</ContentPage>

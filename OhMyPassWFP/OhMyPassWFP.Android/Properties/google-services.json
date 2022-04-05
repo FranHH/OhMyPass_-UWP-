@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "964772550633",
+    "firebase_url": "https://ohmypass-238d0-default-rtdb.firebaseio.com",
+    "project_id": "ohmypass-238d0",
+    "storage_bucket": "ohmypass-238d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964772550633:android:32a30857160696c2b31d78",
+        "android_client_info": {
+          "package_name": "com.companyname.ohmypasswfp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964772550633-dhubivom0qff9u1qho8lptjchs3rb387.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnD-WQ7mzb-KkmVpq-x9C3_fufncG8x9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964772550633-dhubivom0qff9u1qho8lptjchs3rb387.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

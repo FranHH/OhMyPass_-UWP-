@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OhMyPassWFP.Views.RegisterPage">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="wallpaper.jpg" Aspect="AspectFill"/>
+            <BoxView Color="LightGray" Opacity="0.8" />
+
+            <StackLayout>
+                <StackLayout>
+                    <Image Source="logograndesinfondo.png" HeightRequest="200"/>
+                    <Image Source="registro.png" Margin="70,-125,70,-185"/>
+                </StackLayout>
+
+                <StackLayout Padding="40,40" Margin="0,90,0,-190">
+                    <Label Text="Correo electronico" TextColor="Black"/>
+                    <Entry Placeholder="Introduce tu correo" PlaceholderColor="Gray" Margin="0,-10,0,0" x:Name="cUsuarioRegister"/>
+
+                    <Label Text="PIN" TextColor="Black"/>
+                    <StackLayout Orientation="Horizontal" >
+                        <Entry Placeholder="Introduce un PIN de 4 digitos" PlaceholderColor="Gray" Margin="0,-10,0,0" HorizontalOptions="FillAndExpand"  IsPassword="True" MaxLength="4" x:Name="cPassRegister"/>
+                        <Image x:Name="psRegisIcon" Source="ver.png" HorizontalOptions="End">
+                            <Image.GestureRecognizers >
+                                <TapGestureRecognizer Tapped="PsRegisIconClicked" NumberOfTapsRequired="1"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+
+                    <Label Text="Repite el PIN" TextColor="Black"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry Placeholder="Introduce un PIN de 4 digitos" PlaceholderColor="Gray" Margin="0,-10,0,0" HorizontalOptions="FillAndExpand"  IsPassword="True" MaxLength="4" x:Name="cRPassRegister"/>
+                        <Image x:Name="psRepitRegistIcon" Source="ver.png" HorizontalOptions="End">
+                            <Image.GestureRecognizers >
+                                <TapGestureRecognizer Tapped="PsRepitRegisIconClicked" NumberOfTapsRequired="1"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+
+                    
+                    <StackLayout Margin="0,0,0,0">
+                        
+                        <Label Text="Selecciona tu pais" TextColor="Black"/>
+                        <ListView  x:Name="listCountry" VerticalScrollBarVisibility="Always" ItemSelected="CountryItemSelected">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal" BackgroundColor="Red">
+                                            <Image Source="{Binding CountryImage}" HorizontalOptions="Start"/>
+                                            <StackLayout>
+                                                <Label Text="{Binding CountryName}" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
+                                                <Label Text="{Binding CountryPrefijo}" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        
+                        <Label Text="Introduce tu numero de telefono" TextColor="Black"/>
+                        <StackLayout Orientation="Horizontal" Padding="0,70,0,0">
+                            <Label x:Name="prefijo" Text="+34" TextColor="Black" Padding="0,15,0,0" HorizontalOptions="Start" />
+                            <Entry Placeholder="Número de telefono" TextColor="Black" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                        
+                    </StackLayout>
+                    
+                    
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="20,170,10,-110">
+                    <CheckBox x:Name="checkCondicionesYServicios" HorizontalOptions="EndAndExpand" Color="Black"/>
+                    <Label VerticalOptions="CenterAndExpand">
+                        <Label.FormattedText >
+                            <FormattedString >
+                                <Span Text="Acepto las "/>
+                                <Span Text="Condiciones del servicio y la Política de privacidad " TextColor="Blue" TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TerminosYCondiciones"/>
+                                    </Span.GestureRecognizers>
+                                </Span>
+                                <Span Text="de OhMyPass Entertainment." />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,110,25,350">
+                    <Button Text="Cancelar"  BackgroundColor="Transparent" Opacity="0.7" BorderRadius="20" TextColor="Black" Clicked="btnCancelarRegistro" HorizontalOptions="FillAndExpand" IsEnabled="true" />
+                    <Button Text="Registrar" BackgroundColor="Black" BorderRadius="20" TextColor="White" Clicked="btnRegistrar" HorizontalOptions="FillAndExpand" IsEnabled="True"/>
+                </StackLayout>
+
+                <StackLayout  Margin="0,50,0,200">
+                    <Label Text="V.1.1" x:Name="lbVersion" FontSize="Micro" HorizontalOptions="Center" FontAttributes="Italic"/>
+                </StackLayout>
+
+            </StackLayout>
+
+               
+           
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

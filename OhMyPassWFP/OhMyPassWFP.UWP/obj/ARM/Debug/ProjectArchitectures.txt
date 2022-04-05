@@ -1,0 +1,1 @@
+C:\ots\OhMyPass(Multiplasform)\OhMyPassWFP\OhMyPassWFP.UWP\OhMyPassWFP.UWP.csproj;arm

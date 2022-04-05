@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:OhMyPassWFP.Views"
+             x:Class="OhMyPassWFP.Views.TusOpinionesPage"
+             Title="Tus opiniones">
+    
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="wallpaper.jpg" Aspect="AspectFill"/>
+            <BoxView Color="LightGray" Opacity="0.8" />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+            </Grid>
+
+            <ListView x:Name="tuOpinionLV" ItemSelected="OpSelected" ItemTapped="MenuTapped" HasUnevenRows="True" SeparatorVisibility="None" IsPullToRefreshEnabled="True" RefreshControlColor="Green" Scrolled="OnListViewScrolled" HorizontalScrollBarVisibility="Always" VerticalScrollBarVisibility="Always">
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <ViewCell>
+                            <Grid Padding="2" >
+                                <Frame BackgroundColor="WhiteSmoke" CornerRadius="5" BorderColor="Black" HasShadow="false">
+
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Usuario :       " TextColor="Black" FontAttributes="Bold" Opacity="0.5" HorizontalOptions="Start" FontSize="Medium"/>
+                                            <Label Text="{Binding User}" TextColor="Black" HorizontalOptions="StartAndExpand" TextDecorations="Underline" FontSize="Medium" FontAttributes="Bold"/>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Puntuacion :" TextColor="Black" FontAttributes="Bold" Opacity="0.5" HorizontalOptions="Start" FontSize="Medium"/>
+                                            <Label Text="{Binding Puntuacion}" TextColor="Black" HorizontalOptions="StartAndExpand" TextDecorations="Underline" FontSize="Medium" FontAttributes="Bold"/>
+                                        </StackLayout>
+
+                                        <StackLayout>
+                                            <Label Text="Opinion :       " TextColor="Black" FontAttributes="Bold" Opacity="0.5" HorizontalOptions="Start" FontSize="Medium"/>
+                                            <Editor Text="{Binding Opinion}" IsReadOnly="True" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Transparent" AutoSize="TextChanges" IsTextPredictionEnabled="True" PlaceholderColor="Black" Placeholder="No hay opinion"/>
+
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Fecha " TextColor="Black" FontAttributes="Bold" Opacity="0.5" HorizontalOptions="Start" FontSize="Small"/>
+                                            <Label Text="{Binding Fecha}" TextColor="Black" HorizontalOptions="EndAndExpand" Opacity="0.5" TextDecorations="Underline" FontSize="Small" FontAttributes="Bold"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
